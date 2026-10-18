@@ -48,7 +48,7 @@ python scripts/aggregate.py results.csv run1.csv run2.csv run3.csv
 python scripts/plot.py results.csv recall_vs_latency.png      # 1800x1200 PNG
 ```
 
-On Windows (MSYS2 UCRT64) use `build	ests.exe` / `buildench.exe`. Always benchmark a Release build; Debug numbers are 10-50x slower.
+On Windows (MSYS2 UCRT64) run `build\tests.exe` and `build\bench.exe` instead. Always benchmark a Release build; Debug numbers are 10-50x slower.
 
 ## Layout
 
