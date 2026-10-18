@@ -25,14 +25,14 @@ layer 0:   o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o    every node, short links
            query enters at the top, drops a layer each time it stops improving
 ```
 
-## Build and reproduce (under 5 minutes)
+## Build and reproduce (~5 minutes, mostly the dataset download)
 
 Requirements: a C++17 compiler, CMake >= 3.16, Ninja (or any generator), Python 3 with matplotlib (only for plots). `doctest` is vendored in `third_party/`.
 
 ```bash
 # 1. dataset: SIFT10K / "siftsmall" (~5 MB, TEXMEX corpus)
 mkdir -p data && cd data
-curl -O ftp://ftp.irisa.fr/local/texmex/corpus/siftsmall.tar.gz
+curl -C - -O ftp://ftp.irisa.fr/local/texmex/corpus/siftsmall.tar.gz   # FTP can be slow (~3 min); -C - resumes a cut-off download
 tar -xzf siftsmall.tar.gz && cd ..
 
 # 2. build (Release by default: -O3 -march=native) and test
